@@ -688,7 +688,7 @@ button {
   left: 18px;
   right: 18px;
   bottom: 18px;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr auto;
   gap: 12px;
   align-items: center;

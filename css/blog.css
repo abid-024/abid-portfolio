@@ -85,24 +85,24 @@ body {
 }
 
 ::selection {
-  background: #96F0FF;
+  background: #96f0ff;
   color: #101010;
 }
 
 ::-moz-selection {
-  background: #96F0FF;
+  background: #96f0ff;
   color: #101010;
 }
 
 :root[data-theme="dark"] ::selection,
 html[data-theme="dark"] ::selection {
-  background: #C7FF3D;
+  background: #c7ff3d;
   color: #101010;
 }
 
 :root[data-theme="dark"] ::-moz-selection,
 html[data-theme="dark"] ::-moz-selection {
-  background: #C7FF3D;
+  background: #c7ff3d;
   color: #101010;
 }
 
@@ -4888,22 +4888,22 @@ html[data-theme="dark"] .blog-detail-nav .theme-toggle-icon {
 }
 
 ::selection {
-  background: #96F0FF;
+  background: #96f0ff;
   color: #101010;
 }
 
 ::-moz-selection {
-  background: #96F0FF;
+  background: #96f0ff;
   color: #101010;
 }
 
 html[data-theme="dark"] ::selection {
-  background: #C7FF3D;
+  background: #c7ff3d;
   color: #101010;
 }
 
 html[data-theme="dark"] ::-moz-selection {
-  background: #C7FF3D;
+  background: #c7ff3d;
   color: #101010;
 }
 
@@ -5005,8 +5005,6 @@ html[data-theme="dark"] ::-moz-selection {
   }
 }
 
-
-
 /* BLOG ARTICLE FIXED NAV */
 body.blog-article .page {
   margin-top: 0 !important;
@@ -5036,8 +5034,6 @@ body.blog-article .blog-detail-nav {
     width: calc(100% - 18px) !important;
   }
 }
-
-
 
 /* BLOG ARTICLE SAME TEXT HIGHLIGHT AS OTHER PAGES */
 body.blog-article ::selection,

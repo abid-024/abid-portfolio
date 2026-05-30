@@ -88,7 +88,9 @@ function qsa(selector, parent = document) {
   return Array.from(parent.querySelectorAll(selector));
 }
 
-function showSiteToast(message) { return; }
+function showSiteToast(message) {
+  return;
+}
 
 /* ---------- theme toggle ---------- */
 
@@ -721,7 +723,6 @@ function setupLandingSkillCardMagnifier() {
 window.addEventListener("pageshow", restoreHomeAnchorIfNeeded);
 
 document.addEventListener("DOMContentLoaded", () => {
-
   setupThemeToggle();
   hardenExternalLinks();
   setupStickyNav();
@@ -750,10 +751,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTimeMood();
 });
 
-
-
 /* FINAL_PATCH_NO_HOVER_TOAST: requested - remove cursor hover text popup */
-showSiteToast = function () { return; };
+showSiteToast = function () {
+  return;
+};
 
 /* Restore section cursor follower from original index behavior. */
 function setupCursorModesFinalPatch() {
@@ -772,17 +773,22 @@ function setupCursorModesFinalPatch() {
     const event = lastEvent;
     if (!event) return;
     const target = document.elementFromPoint(event.clientX, event.clientY);
-    const mode = target?.closest?.("[data-cursor-mode]")?.dataset.cursorMode || "default";
+    const mode =
+      target?.closest?.("[data-cursor-mode]")?.dataset.cursorMode || "default";
     document.body.dataset.cursorMode = mode;
     cursor.style.setProperty("--cursor-x", `${event.clientX}px`);
     cursor.style.setProperty("--cursor-y", `${event.clientY}px`);
     cursor.classList.add("is-visible");
   }
 
-  document.addEventListener("pointermove", (event) => {
-    lastEvent = event;
-    if (!raf) raf = requestAnimationFrame(update);
-  }, { passive: true });
+  document.addEventListener(
+    "pointermove",
+    (event) => {
+      lastEvent = event;
+      if (!raf) raf = requestAnimationFrame(update);
+    },
+    { passive: true },
+  );
 
   document.addEventListener("pointerleave", () => {
     cursor.classList.remove("is-visible");
@@ -792,16 +798,25 @@ function setupCursorModesFinalPatch() {
 /* Stronger image protection: no drag, no context menu, no easy select/copy. */
 function setupImageProtectionFinalPatch() {
   document.addEventListener("contextmenu", (event) => {
-    if (event.target.closest("img, [data-protected-photo], .intro-photo-frame, .portrait-frame, .quote-photo-frame")) {
+    if (
+      event.target.closest(
+        "img, [data-protected-photo], .intro-photo-frame, .portrait-frame, .quote-photo-frame",
+      )
+    ) {
       event.preventDefault();
     }
   });
   document.addEventListener("dragstart", (event) => {
-    if (event.target.closest("img, [data-protected-photo]")) event.preventDefault();
+    if (event.target.closest("img, [data-protected-photo]"))
+      event.preventDefault();
   });
   document.addEventListener("copy", (event) => {
     const selected = String(window.getSelection?.() || "");
-    if (selected.length > 0 && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
+    if (
+      selected.length > 0 &&
+      document.activeElement?.tagName !== "INPUT" &&
+      document.activeElement?.tagName !== "TEXTAREA"
+    ) {
       // allow text copy; block only image drag/context above
     }
   });
@@ -830,17 +845,21 @@ if (document.readyState === "loading") {
   revealEverythingFastFinalPatch();
 }
 
-
 /* CORRECT_ZIP_PATCH: 5-sec hero image is above; blur protected images when copy/drag/right-click is attempted. */
 (function correctZipImageProtection() {
   function blurProtected(target) {
-    const box = target?.closest?.(".intro-photo-frame, .portrait-frame, .quote-photo-frame, [data-protected-photo]") || target;
+    const box =
+      target?.closest?.(
+        ".intro-photo-frame, .portrait-frame, .quote-photo-frame, [data-protected-photo]",
+      ) || target;
     if (!box?.classList) return;
     box.classList.add("is-protected-blur");
     window.setTimeout(() => box.classList.remove("is-protected-blur"), 900);
   }
   document.addEventListener("contextmenu", (event) => {
-    const target = event.target.closest("img, .intro-photo-frame, .portrait-frame, .quote-photo-frame, [data-protected-photo]");
+    const target = event.target.closest(
+      "img, .intro-photo-frame, .portrait-frame, .quote-photo-frame, [data-protected-photo]",
+    );
     if (!target) return;
     event.preventDefault();
     blurProtected(target);
@@ -851,5 +870,7 @@ if (document.readyState === "loading") {
     event.preventDefault();
     blurProtected(target);
   });
-  document.querySelectorAll("img").forEach((img) => img.setAttribute("draggable", "false"));
+  document
+    .querySelectorAll("img")
+    .forEach((img) => img.setAttribute("draggable", "false"));
 })();

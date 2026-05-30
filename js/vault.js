@@ -1,11 +1,15 @@
 (() => {
   const root = document.documentElement;
   const toggles = Array.from(
-    document.querySelectorAll("[data-theme-toggle], [data-blog-theme-toggle], #themeToggle"),
+    document.querySelectorAll(
+      "[data-theme-toggle], [data-blog-theme-toggle], #themeToggle",
+    ),
   );
-  const storageKey = document.body.classList.contains("blog-page") || document.body.classList.contains("blog-article")
-    ? "blogTheme"
-    : "site-theme";
+  const storageKey =
+    document.body.classList.contains("blog-page") ||
+    document.body.classList.contains("blog-article")
+      ? "blogTheme"
+      : "site-theme";
 
   function applyTheme(theme) {
     const cleanTheme = theme === "dark" ? "dark" : "light";
@@ -14,7 +18,12 @@
 
     toggles.forEach((toggle) => {
       toggle.setAttribute("aria-pressed", String(cleanTheme === "dark"));
-      toggle.setAttribute("title", cleanTheme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+      toggle.setAttribute(
+        "title",
+        cleanTheme === "dark"
+          ? "Switch to light theme"
+          : "Switch to dark theme",
+      );
       const text = toggle.querySelector(".theme-toggle-text");
       if (text) text.textContent = cleanTheme === "dark" ? "Dark" : "Light";
     });
@@ -23,7 +32,8 @@
       localStorage.setItem(storageKey, cleanTheme);
       localStorage.setItem("site-theme", cleanTheme);
       localStorage.setItem("theme", cleanTheme);
-      if (storageKey === "blogTheme") localStorage.setItem("blogDetailTheme", cleanTheme);
+      if (storageKey === "blogTheme")
+        localStorage.setItem("blogDetailTheme", cleanTheme);
     } catch (error) {}
   }
 
@@ -42,10 +52,13 @@
     if (toggle.dataset.themeReady === "true") return;
     toggle.dataset.themeReady = "true";
     toggle.addEventListener("click", () => {
-      const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      const nextTheme =
+        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
       applyTheme(nextTheme);
 
-      const logo = document.querySelector(".blog-logo, .blog-logo-link, .site-nav-brand img");
+      const logo = document.querySelector(
+        ".blog-logo, .blog-logo-link, .site-nav-brand img",
+      );
       logo?.classList.remove("is-theme-pulse");
       void logo?.offsetWidth;
       logo?.classList.add("is-theme-pulse");
@@ -83,20 +96,30 @@
   }
 })();
 
-
 /* FINAL_GLOBAL_IMAGE_PROTECTION */
 (() => {
   document.addEventListener("contextmenu", (event) => {
-    if (event.target.closest("img, [data-protected-photo], .hero-photo-card, .post-visual, .project-screen, .vault-screen, .contact-visual")) {
+    if (
+      event.target.closest(
+        "img, [data-protected-photo], .hero-photo-card, .post-visual, .project-screen, .vault-screen, .contact-visual",
+      )
+    ) {
       event.preventDefault();
     }
   });
   document.addEventListener("dragstart", (event) => {
-    if (event.target.closest("img, [data-protected-photo]")) event.preventDefault();
+    if (event.target.closest("img, [data-protected-photo]"))
+      event.preventDefault();
   });
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => document.querySelectorAll("img").forEach((img) => img.setAttribute("draggable", "false")));
+    document.addEventListener("DOMContentLoaded", () =>
+      document
+        .querySelectorAll("img")
+        .forEach((img) => img.setAttribute("draggable", "false")),
+    );
   } else {
-    document.querySelectorAll("img").forEach((img) => img.setAttribute("draggable", "false"));
+    document
+      .querySelectorAll("img")
+      .forEach((img) => img.setAttribute("draggable", "false"));
   }
 })();

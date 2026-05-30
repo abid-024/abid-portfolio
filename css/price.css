@@ -48,14 +48,22 @@ html[data-theme="dark"] {
   --accent: #b79cff;
   --accent-soft: rgba(183, 156, 255, 0.24);
   --hero-bg:
-    radial-gradient(circle at 14% 16%, rgba(183, 156, 255, 0.28), transparent 25%),
+    radial-gradient(
+      circle at 14% 16%,
+      rgba(183, 156, 255, 0.28),
+      transparent 25%
+    ),
     linear-gradient(135deg, #1c1530 0%, #3d2865 50%, #572d4f 100%);
 }
 
 html[data-theme="dark"] .pricing-automation,
 html[data-theme="dark"] .combined-page.pricing-automation {
   --hero-bg:
-    radial-gradient(circle at 18% 18%, rgba(183, 156, 255, 0.24), transparent 28%),
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(183, 156, 255, 0.24),
+      transparent 28%
+    ),
     linear-gradient(135deg, #0d0918 0%, #201638 48%, #3b203a 100%);
 }
 
@@ -64,14 +72,22 @@ html[data-theme="dark"] .combined-page.pricing-automation {
   --accent: #8df5b5;
   --accent-soft: rgba(141, 245, 181, 0.24);
   --hero-bg:
-    radial-gradient(circle at 16% 16%, rgba(141, 245, 181, 0.25), transparent 26%),
+    radial-gradient(
+      circle at 16% 16%,
+      rgba(141, 245, 181, 0.25),
+      transparent 26%
+    ),
     linear-gradient(135deg, #101010 0%, #132c25 50%, #0f2530 100%);
 }
 
 html[data-theme="dark"] .pricing-web,
 html[data-theme="dark"] .combined-page.pricing-web {
   --hero-bg:
-    radial-gradient(circle at 16% 16%, rgba(141, 245, 181, 0.2), transparent 28%),
+    radial-gradient(
+      circle at 16% 16%,
+      rgba(141, 245, 181, 0.2),
+      transparent 28%
+    ),
     linear-gradient(135deg, #080b10 0%, #10231f 50%, #101c27 100%);
 }
 
@@ -80,7 +96,11 @@ html[data-theme="dark"] .combined-page.pricing-web {
   --accent: #76bdff;
   --accent-soft: rgba(118, 189, 255, 0.26);
   --hero-bg:
-    radial-gradient(circle at 14% 16%, rgba(118, 189, 255, 0.28), transparent 25%),
+    radial-gradient(
+      circle at 14% 16%,
+      rgba(118, 189, 255, 0.28),
+      transparent 25%
+    ),
     linear-gradient(135deg, #eaf8ff 0%, #a8dfff 48%, #3a79bd 100%);
   --hero-ink: #102033;
   --hero-muted: rgba(16, 32, 51, 0.7);
@@ -91,7 +111,11 @@ html[data-theme="dark"] .combined-page.pricing-web {
 html[data-theme="dark"] .pricing-gmb,
 html[data-theme="dark"] .combined-page.pricing-gmb {
   --hero-bg:
-    radial-gradient(circle at 16% 16%, rgba(118, 189, 255, 0.22), transparent 28%),
+    radial-gradient(
+      circle at 16% 16%,
+      rgba(118, 189, 255, 0.22),
+      transparent 28%
+    ),
     linear-gradient(135deg, #07121d 0%, #102b44 52%, #163b5f 100%);
   --hero-ink: #fff1d6;
   --hero-muted: rgba(255, 241, 214, 0.7);
@@ -104,16 +128,32 @@ html[data-theme="dark"] .combined-page.pricing-gmb {
   --accent: #8f75ff;
   --accent-soft: rgba(143, 117, 255, 0.25);
   --hero-bg:
-    radial-gradient(circle at 18% 16%, rgba(105, 213, 232, 0.22), transparent 26%),
-    radial-gradient(circle at 85% 78%, rgba(255, 142, 88, 0.2), transparent 28%),
+    radial-gradient(
+      circle at 18% 16%,
+      rgba(105, 213, 232, 0.22),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 85% 78%,
+      rgba(255, 142, 88, 0.2),
+      transparent 28%
+    ),
     linear-gradient(135deg, #261941 0%, #3d2a5f 50%, #17121f 100%);
 }
 
 html[data-theme="dark"] .pricing-uiux,
 html[data-theme="dark"] .combined-page.pricing-uiux {
   --hero-bg:
-    radial-gradient(circle at 18% 16%, rgba(105, 213, 232, 0.16), transparent 27%),
-    radial-gradient(circle at 85% 78%, rgba(255, 142, 88, 0.16), transparent 28%),
+    radial-gradient(
+      circle at 18% 16%,
+      rgba(105, 213, 232, 0.16),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 85% 78%,
+      rgba(255, 142, 88, 0.16),
+      transparent 28%
+    ),
     linear-gradient(135deg, #110c20 0%, #24193e 50%, #080711 100%);
 }
 
@@ -122,14 +162,22 @@ html[data-theme="dark"] .combined-page.pricing-uiux {
   --accent: #6ee7d8;
   --accent-soft: rgba(110, 231, 216, 0.24);
   --hero-bg:
-    radial-gradient(circle at 18% 18%, rgba(110, 231, 216, 0.22), transparent 28%),
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(110, 231, 216, 0.22),
+      transparent 28%
+    ),
     linear-gradient(135deg, #09131a 0%, #123c3b 55%, #13283a 100%);
 }
 
 html[data-theme="dark"] .pricing-networking,
 html[data-theme="dark"] .combined-page.pricing-networking {
   --hero-bg:
-    radial-gradient(circle at 18% 18%, rgba(110, 231, 216, 0.17), transparent 28%),
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(110, 231, 216, 0.17),
+      transparent 28%
+    ),
     linear-gradient(135deg, #050a0e 0%, #102c2c 55%, #0e2030 100%);
 }
 
@@ -150,10 +198,20 @@ body.pricing-pay-page {
   margin: 0;
   overflow-x: hidden;
   background:
-    linear-gradient(rgba(17, 17, 17, 0.018) 1px, transparent 1px) 0 0 / 90px 90px,
-    linear-gradient(90deg, rgba(17, 17, 17, 0.018) 1px, transparent 1px) 0 0 / 90px 90px,
-    radial-gradient(circle at 9% 18%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 28%),
-    radial-gradient(circle at 90% 78%, rgba(109, 143, 255, 0.07), transparent 32%),
+    linear-gradient(rgba(17, 17, 17, 0.018) 1px, transparent 1px) 0 0 / 90px
+      90px,
+    linear-gradient(90deg, rgba(17, 17, 17, 0.018) 1px, transparent 1px) 0 0 /
+      90px 90px,
+    radial-gradient(
+      circle at 9% 18%,
+      color-mix(in srgb, var(--accent) 12%, transparent),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 78%,
+      rgba(109, 143, 255, 0.07),
+      transparent 32%
+    ),
     var(--pricing-bg);
   color: var(--pricing-ink);
   font-family:
@@ -170,10 +228,20 @@ body.pricing-pay-page {
 html[data-theme="dark"] body.pricing-service-page,
 html[data-theme="dark"] body.pricing-pay-page {
   background:
-    linear-gradient(rgba(255, 241, 214, 0.018) 1px, transparent 1px) 0 0 / 90px 90px,
-    linear-gradient(90deg, rgba(255, 241, 214, 0.018) 1px, transparent 1px) 0 0 / 90px 90px,
-    radial-gradient(circle at 9% 18%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 28%),
-    radial-gradient(circle at 90% 78%, rgba(109, 143, 255, 0.08), transparent 32%),
+    linear-gradient(rgba(255, 241, 214, 0.018) 1px, transparent 1px) 0 0 / 90px
+      90px,
+    linear-gradient(90deg, rgba(255, 241, 214, 0.018) 1px, transparent 1px) 0
+      0 / 90px 90px,
+    radial-gradient(
+      circle at 9% 18%,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 78%,
+      rgba(109, 143, 255, 0.08),
+      transparent 32%
+    ),
     var(--pricing-bg);
 }
 
@@ -453,7 +521,9 @@ html:not([data-theme="dark"]) .pricing-pay-brand img {
   color: #101010;
   padding: 10px 19px;
   font-weight: 950;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .pricing-btn.is-soft,
@@ -510,7 +580,8 @@ html:not([data-theme="dark"]) .pricing-pay-brand img {
 }
 
 @keyframes pricingFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
 
@@ -1283,9 +1354,31 @@ html[data-theme="dark"] .pricing-pay-clarity-card .pricing-pay-kicker {
 
 /* Combined pricing page small navigation */
 
-  body.pricing-service-page { padding-top: 1px; }
-  .combined-nav { width: min(1168px, calc(100% - 28px)); margin: 18px auto; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-  .combined-nav a, .combined-nav button { border:1.5px solid var(--pricing-line); border-radius:999px; background:var(--pricing-card-solid); padding:9px 14px; font-weight:900; color:var(--pricing-ink); cursor:pointer; }
-  .combined-page { width:min(1168px, calc(100% - 28px)); margin:0 auto 80px; }
-  .combined-page .pricing-section-head { margin-top:32px; }
-
+body.pricing-service-page {
+  padding-top: 1px;
+}
+.combined-nav {
+  width: min(1168px, calc(100% - 28px));
+  margin: 18px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.combined-nav a,
+.combined-nav button {
+  border: 1.5px solid var(--pricing-line);
+  border-radius: 999px;
+  background: var(--pricing-card-solid);
+  padding: 9px 14px;
+  font-weight: 900;
+  color: var(--pricing-ink);
+  cursor: pointer;
+}
+.combined-page {
+  width: min(1168px, calc(100% - 28px));
+  margin: 0 auto 80px;
+}
+.combined-page .pricing-section-head {
+  margin-top: 32px;
+}
