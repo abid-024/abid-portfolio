@@ -482,45 +482,89 @@
         <aside>
           <h3>Quick Local Review</h3>
           <p>Send the basics and I can check what should be fixed first.</p>
-          <form class="service-contact-form">
+          <form class="service-contact-form" data-service-form>
             <input
-              name="service"
               type="hidden"
-              value="GMB Optimization Service"
+              name="access_key"
+              value="4c01f60d-7d14-4496-84ce-4f2a3802ff50"
             />
-            <div class="service-name-row">
-              <input
-                name="first_name"
-                placeholder="First Name"
-                required=""
-                type="text"
-              />
-              <input
-                name="last_name"
-                placeholder="Last Name"
-                required=""
-                type="text"
-              />
+            <input
+              type="hidden"
+              name="subject"
+              value="New message: GMB Optimization Service"
+            />
+            <input
+              type="hidden"
+              name="from_name"
+              value="Abid FlowSync Website"
+            />
+            <input type="hidden" name="page_url" value="" />
+            <input type="hidden" name="page_title" value="" />
+
+            <input
+              type="checkbox"
+              name="botcheck"
+              tabindex="-1"
+              autocomplete="off"
+              style="display: none"
+            />
+
+            <div class="form-two-col">
+              <label>
+                <span>First Name</span>
+                <input
+                  type="text"
+                  name="first_name"
+                  placeholder="First Name"
+                  autocomplete="given-name"
+                  required
+                />
+              </label>
+
+              <label>
+                <span>Last Name</span>
+                <input
+                  type="text"
+                  name="last_name"
+                  placeholder="Last Name"
+                  autocomplete="family-name"
+                  required
+                />
+              </label>
             </div>
-            <input
-              name="email"
-              placeholder="Email address"
-              required=""
-              type="email"
-            />
-            <input
-              name="business_name"
-              placeholder="Business name"
-              type="text"
-            />
-            <input name="area" placeholder="Target city / area" type="text" />
-            <textarea
-              name="message"
-              placeholder="Google profile link, website, or service notes"
-              required=""
-              rows="4"
-            ></textarea>
-            <button type="submit">Send Review</button>
+
+            <label>
+              <span>Email address</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email address"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+            <label>
+              <span>Business / Google Profile</span>
+              <input
+                type="text"
+                name="business_profile"
+                placeholder="Business name or Google profile link"
+                required
+              />
+            </label>
+
+            <label>
+              <span>What should be improved?</span>
+              <textarea
+                name="message"
+                placeholder="What should be improved? Maps ranking, profile setup, reviews, photos, posts, local SEO..."
+                rows="5"
+                required
+              ></textarea>
+            </label>
+
+            <button type="submit">Send Message</button>
           </form>
         </aside>
       </section>

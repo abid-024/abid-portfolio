@@ -1087,18 +1087,6 @@ html[data-theme="dark"] .pricing-pay-clarity-card .pricing-pay-kicker {
 }
 
 /* =========================
-   Combined single-file page support
-========================= */
-.combined-page {
-  width: min(var(--pricing-width), calc(100% - 32px));
-  margin: 30px auto 70px;
-}
-
-.combined-page .pricing-hero {
-  margin-bottom: clamp(34px, 5vw, 58px);
-}
-
-/* =========================
    Responsive fixes
 ========================= */
 @media (max-width: 920px) {
@@ -1352,33 +1340,3 @@ html[data-theme="dark"] .pricing-pay-clarity-card .pricing-pay-kicker {
   }
 }
 
-/* Combined pricing page small navigation */
-
-body.pricing-service-page {
-  padding-top: 1px;
-}
-.combined-nav {
-  width: min(1168px, calc(100% - 28px));
-  margin: 18px auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-.combined-nav a,
-.combined-nav button {
-  border: 1.5px solid var(--pricing-line);
-  border-radius: 999px;
-  background: var(--pricing-card-solid);
-  padding: 9px 14px;
-  font-weight: 900;
-  color: var(--pricing-ink);
-  cursor: pointer;
-}
-.combined-page {
-  width: min(1168px, calc(100% - 28px));
-  margin: 0 auto 80px;
-}
-.combined-page .pricing-section-head {
-  margin-top: 32px;
-}

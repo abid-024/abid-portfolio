@@ -123,3 +123,66 @@
       .forEach((img) => img.setAttribute("draggable", "false"));
   }
 })();
+
+
+
+function setupServiceForms() {
+  const forms = document.querySelectorAll("[data-service-form], .service-contact-form");
+
+  forms.forEach((form) => {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const defaultButtonText = submitButton ? submitButton.textContent : "Send Message";
+
+    const pageUrlInput = form.querySelector('input[name="page_url"]');
+    const pageTitleInput = form.querySelector('input[name="page_title"]');
+
+    if (pageUrlInput) pageUrlInput.value = window.location.href;
+    if (pageTitleInput) pageTitleInput.value = document.title;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!submitButton) return;
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          submitButton.textContent = "Message sent";
+          form.reset();
+
+          if (pageUrlInput) pageUrlInput.value = window.location.href;
+          if (pageTitleInput) pageTitleInput.value = document.title;
+
+          setTimeout(() => {
+            submitButton.textContent = defaultButtonText;
+            submitButton.disabled = false;
+          }, 2200);
+        } else {
+          submitButton.textContent = "Try again";
+          submitButton.disabled = false;
+          console.error("Web3Forms error:", result);
+        }
+      } catch (error) {
+        submitButton.textContent = "Try again";
+        submitButton.disabled = false;
+        console.error("Form submit failed:", error);
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", setupServiceForms);
