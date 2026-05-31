@@ -499,21 +499,32 @@ function setupNameHover() {
   const name = qs("[data-name-hover]");
   if (!name) return;
 
-  let index = nameLanguages.indexOf(name.textContent.trim());
-  if (index < 0) index = nameLanguages.length - 1;
+  const defaultName = "Abid Hasan";
+  let index = 0;
+  let timer = null;
 
-  function changeName() {
-    index = (index + 1) % nameLanguages.length;
+  function setName(text) {
+    window.clearTimeout(timer);
     name.classList.add("is-changing");
 
-    window.setTimeout(() => {
-      name.textContent = nameLanguages[index];
+    timer = window.setTimeout(() => {
+      name.textContent = text;
       name.classList.remove("is-changing");
     }, 120);
   }
 
-  name.addEventListener("pointerenter", changeName);
-  name.addEventListener("click", changeName);
+  function showNextLanguage() {
+    index = (index + 1) % nameLanguages.length;
+
+    if (nameLanguages[index] === defaultName) {
+      index = (index + 1) % nameLanguages.length;
+    }
+
+    setName(nameLanguages[index]);
+  }
+
+  name.addEventListener("pointerenter", showNextLanguage);
+  name.addEventListener("pointerleave", () => setName(defaultName));
 }
 
 /* ---------- buttons and cards ---------- */
